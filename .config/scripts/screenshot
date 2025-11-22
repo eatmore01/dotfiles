@@ -1,0 +1,5 @@
+#!/bin/sh
+
+FILE="/home/$USER/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png"
+
+maim -s | xclip -selection clipboard -t image/png

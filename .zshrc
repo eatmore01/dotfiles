@@ -35,3 +35,5 @@ alias pullreb="git pull origin --rebase"
 alias v="vault"
 alias gen_tf_doc="terraform-docs markdown table --output-file README.md --output-mode inject"
 alias hd="helm-docs"
+
+alias sshconfig="cat ~/.ssh/config"

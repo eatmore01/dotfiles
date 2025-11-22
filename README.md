@@ -1,22 +1,7 @@
-# Dotfiles
+# Dotfiles 
 
-### BEBEBE
-```bash
-yay -Sy zsh alacritty-git  waybar  tofi --noconfirm --cleanafter --removemake
-```
-
-#### zsh plugins
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-```
-
-### GIT
-```bash
-git config --global user.email "etm@etm.com"
-git config --global user.name "eatmore01"
-```
+i cant breathe...
+![qwe](./image.png)
 
 ### VSCODE SETTINGS
 ```json
