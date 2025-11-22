@@ -9,17 +9,17 @@ font pango:monospace 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+focus_follows_mouse no
+
 ##
 #exec xrandr --output DP-0 --primary --mode 2560x1440 --rate 180
 #exec --autostart setxkbmap -layout "us,ru" -option "grp:ctrl_space_toggle"
 exec $afterboot_script_path
-
 ##
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id $screenshot_script_path
 
-
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# off lock | uncomment for unlock | exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.

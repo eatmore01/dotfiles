@@ -87,3 +87,14 @@ sudo mkinitcpio
 sudo pacman  -Syu  nvidia nvidia-utils nvidia-settings
 
 yay -Sy main xclip --noconfirm --cleanafter --removemake
+
+yay -Sy obs-studio --noconfirm --cleanafter --removemake
+
+
+### steam
+sudo vim /etc/pacman.conf
+# uncomment p[multilib]
+sudo pacman -Sy steam --noconfirm
+
+###
+➜  ~ yay -Sy fastfetch --noconfirm --cleanafter --removemake

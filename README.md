@@ -3,6 +3,8 @@
 i cant breathe...
 ![qwe](./image.png)
 
+![hardware](./hardware.png)
+
 ### VSCODE SETTINGS
 ```json
 {
