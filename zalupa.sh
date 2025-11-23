@@ -28,7 +28,7 @@ sudo pacman -Sy alacritty
 yay -Sy i3status-rust
 
 
-# fix amnmeziavpn domen resolving
+# fix amnmeziavpn domen resolving https://github.com/amnezia-vpn/amnezia-client/issues/792
 sudo systemctl enable systemd-resolved.service && sudo systemctl start systemd-resolved.service
 
 sudo ln -sf ../run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
@@ -48,6 +48,9 @@ sudo pacman -Sy kubectl terraform k9s --noconfirm
 
 yay -Sy kubectx terragrunt --noconfirm --cleanafter --removemake
 
+git clone https://github.com/eatmore01/kubeswitches.git
+cd kubeswitches
+go build -o kubeswitches main.go && sudo mv kubeswitches /usr/local/bin/
 
 yay -Sy openvpn3 --noconfirm --cleanafter --removemake
 
@@ -69,7 +72,7 @@ sudo modprobe kvm
 
 virsh --connect qemu:///system net-start default
 virsh --connect qemu:///system net-autostart default
-
+#
 ###
 sudo pacman -S openssh
 
@@ -97,4 +100,6 @@ sudo vim /etc/pacman.conf
 sudo pacman -Sy steam --noconfirm
 
 ###
-➜  ~ yay -Sy fastfetch --noconfirm --cleanafter --removemake
+➜  ~ yay -Sy fastfetch obsidian vlc --noconfirm --cleanafter --removemake
+
+sudo pacman -S vlc-plugin-ffmpeg
