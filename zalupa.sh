@@ -56,17 +56,13 @@ yay -Sy openvpn3 --noconfirm --cleanafter --removemake
 
 
 # LIBVIRT + QEMU
-sudo pacman -Sy gst-plugins-bad-libs
-
-sudo pacman -Sy qemu libvirt virt-manager dnsmasq bridge-utils
+sudo pacman -Sy qemu libvirt virt-manager dnsmasq bridge-utils gst-plugins-bad-libs cdrtools --noconfirm
 
 sudo systemctl enable --now libvirtd
 
 sudo usermod -aG libvirt,kvm $USER
 
 virsh --connect qemu:///system list
-
-sudo pacman -Sy cdrtools
 
 sudo modprobe kvm
 
@@ -103,3 +99,10 @@ sudo pacman -Sy steam --noconfirm
 ➜  ~ yay -Sy fastfetch obsidian vlc --noconfirm --cleanafter --removemake
 
 sudo pacman -S vlc-plugin-ffmpeg
+
+# upd login manager
+sudo pacman -Sy lightdm --noconfirm
+sudo systemctl enable lightdm --now
+sudo systemctl start lightdm
+
+➜  ~ sudo pacman -Rns slim slim-themes sddm

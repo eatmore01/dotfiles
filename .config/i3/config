@@ -1,7 +1,7 @@
 # Mod1 - alt
 set $mod Mod4
 set $screenshot_script_path ~/.config/scripts/screenshot
-set $afterboot_script_path ~/.config/scripts/afterboot
+set $monitor_setup_script_path ~/.config/scripts/monitors
 
 font pango:monospace 12
 
@@ -9,17 +9,20 @@ font pango:monospace 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# exec sleep 2 && xrandr --output DP-1 --primary --mode 2560x1440 --rate 180
+
+exec_always setxkbmap -layout "us,ru" -option "grp:ctrl_space_toggle"
+
 focus_follows_mouse no
 
-##
-#exec xrandr --output DP-0 --primary --mode 2560x1440 --rate 180
-#exec --autostart setxkbmap -layout "us,ru" -option "grp:ctrl_space_toggle"
-exec $afterboot_script_path
-##
+exec $monitor_setup_script_path
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+# off exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
 # screenshot
 bindsym $mod+Shift+s exec --no-startup-id $screenshot_script_path
-
-# off lock | uncomment for unlock | exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -34,6 +37,8 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+
+bindsym $mod+g exec google-chrome-stable
 
 # kill focused window
 bindsym $mod+q kill
