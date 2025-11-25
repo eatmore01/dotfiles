@@ -106,3 +106,14 @@ sudo systemctl enable lightdm --now
 sudo systemctl start lightdm
 
 ➜  ~ sudo pacman -Rns slim slim-themes sddm
+
+
+sudo pacman -S bind --noconfirm
+## ----
+➜  ~ cat /etc/systemd/resolved.conf
+[Resolve]
+DNS=10.0.0.114 8.8.8.8 8.8.4.4 1.1.1.1 10.0.0.114 10.0.0.22
+FallbackDNS=9.9.9.9
+
+
+➜  ~ sudo systemctl restart systemd-resolved.service
