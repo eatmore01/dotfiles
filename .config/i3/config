@@ -39,6 +39,8 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec alacritty
 
 bindsym $mod+g exec google-chrome-stable
+bindsym $mod+t exec Telegram
+bindsym $mod+a exec AmneziaVPN
 
 # kill focused window
 bindsym $mod+q kill

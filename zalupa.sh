@@ -117,3 +117,7 @@ FallbackDNS=9.9.9.9
 
 
 ➜  ~ sudo systemctl restart systemd-resolved.service
+
+####
+
+➜  ~ sudo pacman -Sy nmap
