@@ -1,7 +1,0 @@
-#!/bin/sh
-
-sleep 1
-
-xrandr --output DP-0 --primary --mode 2560x1440 --rate 180
-
-setxkbmap -layout "us,ru" -option "grp:ctrl_space_toggle"

@@ -1,31 +1,74 @@
+# UNIVERSAL
 ## install google-chrome
 ## install yay
-
 yay -Sy zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-
-###
 
 git config --global user.email "etm@etm.com"
 git config --global user.name "eatmore01"
 
-###
-yay -Sy amneziavpn-bin
+yay -Sy amneziavpn-bin \
+    unzip \
+    obs-studio \
+    openvpn3 \
+    fastfetch \
+    obsidian \
+    vlc \
+    --noconfirm --cleanafter --removemake
 
-sudo pacman -S telegram-desktop
+yay -Sy i3status-rust --noconfirm --cleanafter --removemake
 
-yay -Sy nautilus
+sudo pacman -Sy telegram-desktop \
+    alacritty \
+    vlc-plugin-ffmpeg \
+    nmap \
+    bind \
+    --noconfirm
 
-yay -Sy alacritty-git
-sudo pacman -Sy alacritty
+sudo pacman -Rns \
+    slim \
+    slim-themes \
+    sddm \
+    --noconfirm
+#
 
-yay -Sy i3status-rust
+# sway
+yay -Sy waybar \
+    tofi
+#
+
+# i3
+sudo pacman -S xorg-xrandr \
+    nvidia \
+    nvidia-utils \
+    nvidia-settings \
+    --noconfirm
+
+yay -Sy main \
+    xclip \
+    --noconfirm --cleanafter --removemake
+
+### ??
+sudo pacman -Rns \
+    nvidia \
+    nvidia-utils \
+    --noconfirm
+#
+
+# utils
+sudo pacman -Sy kubectl terraform k9s helm --noconfirm
+
+yay -Sy kubectx terragrunt --noconfirm --cleanafter --removemake
+
+git clone https://github.com/eatmore01/kubeswitches.git
+cd kubeswitches
+go build -o kubeswitches main.go && sudo mv kubeswitches /usr/local/bin/
+# 
 
 
 # fix amnmeziavpn domen resolving https://github.com/amnezia-vpn/amnezia-client/issues/792
@@ -37,22 +80,7 @@ cat >> /etc/NetworkManager/conf.d/dns.conf << EOF
 [main]
 dns=systemd-resolved
 EOF
-###
-
-
-yay -Sy waybar unzip tofi --noconfirm --cleanafter --removemake
-
-
-# utils
-sudo pacman -Sy kubectl terraform k9s --noconfirm
-
-yay -Sy kubectx terragrunt --noconfirm --cleanafter --removemake
-
-git clone https://github.com/eatmore01/kubeswitches.git
-cd kubeswitches
-go build -o kubeswitches main.go && sudo mv kubeswitches /usr/local/bin/
-
-yay -Sy openvpn3 --noconfirm --cleanafter --removemake
+#
 
 
 # LIBVIRT + QEMU
@@ -69,55 +97,34 @@ sudo modprobe kvm
 virsh --connect qemu:///system net-start default
 virsh --connect qemu:///system net-autostart default
 #
-###
+
+# SSH
 sudo pacman -S openssh
 
 sudo systemctl start sshd.service
 sudo systemctl enable sshd.service
 
 systemctl status sshd.service
-####
+#
 
 
-sudo pacman -S xorg-xrandr
-
-sudo pacman  -Rns nvidia nvidia-utils
-sudo mkinitcpio
-sudo pacman  -Syu  nvidia nvidia-utils nvidia-settings
-
-yay -Sy main xclip --noconfirm --cleanafter --removemake
-
-yay -Sy obs-studio --noconfirm --cleanafter --removemake
-
-
-### steam
+# steam
 sudo vim /etc/pacman.conf
-# uncomment p[multilib]
+## uncomment p[multilib]
 sudo pacman -Sy steam --noconfirm
-
-###
-➜  ~ yay -Sy fastfetch obsidian vlc --noconfirm --cleanafter --removemake
-
-sudo pacman -S vlc-plugin-ffmpeg
+#
 
 # upd login manager
 sudo pacman -Sy lightdm --noconfirm
 sudo systemctl enable lightdm --now
 sudo systemctl start lightdm
+#
 
-➜  ~ sudo pacman -Rns slim slim-themes sddm
-
-
-sudo pacman -S bind --noconfirm
-## ----
+# ?????????
 ➜  ~ cat /etc/systemd/resolved.conf
 [Resolve]
 DNS=10.0.0.114 8.8.8.8 8.8.4.4 1.1.1.1 10.0.0.114 10.0.0.22
 FallbackDNS=9.9.9.9
 
-
 ➜  ~ sudo systemctl restart systemd-resolved.service
-
-####
-
-➜  ~ sudo pacman -Sy nmap
+# 

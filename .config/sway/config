@@ -11,7 +11,7 @@ set $term alacritty
 set $menu tofi-run | xargs swaymsg exec --
 
 # or no
-focus_follows_mouse yes
+focus_follows_mouse no
 
 # BG
 output * bg ~/.config/sway/black.jpg fill
@@ -188,14 +188,8 @@ bar {
 }
 
 #bar {
-#    position top
-#    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
+#    position bottom
+#    status_command i3status-rs ~/.config/i3status-rust/config.toml
 #}
 
 include /etc/sway/config.d/*
