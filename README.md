@@ -4,7 +4,7 @@ i cant breathe...
 ![qwe](./image.png)
 
 ![hardware](./hardware.png)
-![hardware-mac](./hardware-mac.png)
+![hardware-mac](./hardware-mac.jpg)
 
 ### VSCODE SETTINGS
 
