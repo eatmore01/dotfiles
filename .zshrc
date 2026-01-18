@@ -1,5 +1,6 @@
 
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 export KUBECONFIGS=""
 
@@ -37,6 +38,5 @@ alias gen_tf_doc="terraform-docs markdown table --output-file README.md --output
 alias hd="helm-docs"
 
 alias sshconfig="cat ~/.ssh/config"
-
-alias startovpn="echo 'qwe   qwe    qwe' && openvpn3 session-start --config ~/config.ovpn"
-alias diskovpn="openvpn3 session-manage --config ~/config.ovpn --disconnect"
+alias zshedit="vim ~/.zshrc"
+alias hostsedit="sudo vim /etc/hosts"
