@@ -18,7 +18,6 @@ yay -Sy amneziavpn-bin \
     openvpn3 \
     fastfetch \
     obsidian \
-    vlc \
     happ-desktop-bin \
     --noconfirm --cleanafter --removemake
 
@@ -27,6 +26,7 @@ yay -Sy i3status-rust --noconfirm --cleanafter --removemake
 sudo pacman -Sy telegram-desktop \
     alacritty \
     vlc-plugin-ffmpeg \
+    vlc \
     nmap \
     bind \
     wl-clipboard \
@@ -43,6 +43,8 @@ sudo pacman -Rns \
 yay -Sy waybar --noconfirm --cleanafter --removemake
 yay -Sy tofi --noconfirm --cleanafter --removemake
 #
+
+sudo pacman -Sy obs-studio xdg-desktop-portal xdg-desktop-portal-wlr
 
 # i3
 sudo pacman -S xorg-xrandr \
