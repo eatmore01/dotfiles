@@ -63,7 +63,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
     bindsym --to-code $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym --to-code $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -73,9 +73,6 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
     floating_modifier $mod normal
 
     #screenshots
-    # Full screen screenshot
-    bindsym --to-code $mod+Shift+f exec grim /tmp/swayshot.png && wl-copy < /tmp/swayshot.png && mv /tmp/swayshot.png ~/pic/screen-"$(date +%s)".png
-
     # Area selection screenshot
     bindsym --to-code $mod+Shift+s exec grim -g "$(slurp)" /tmp/swayshot.png && wl-copy < /tmp/swayshot.png && mv /tmp/swayshot.png ~/pic/space-"$(date +%s)".png
 
@@ -182,14 +179,14 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # STATUS BAR
-bar {
-    position top
-    swaybar_command waybar
-}
+# bar {
+#     position bottom
+#     swaybar_command waybar
+# }
 
-#bar {
-#    position bottom
-#    status_command i3status-rs ~/.config/i3status-rust/config.toml
-#}
+bar {
+   position bottom
+   status_command i3status-rs ~/.config/i3status-rust/config.toml
+}
 
 include /etc/sway/config.d/*
