@@ -1,10 +1,12 @@
 # Dotfiles
 
-i cant breathe...
+mainly use sway with intel integrate graphics or amd videcard | almost doesnt use i3 with nvidia videocard
+
 ![qwe](./image.png)
 
-![hardware](./hardware.png)
+![hardware](./hardware-sway.png)
 ![hardware-mac](./hardware-mac.jpg)
+
 
 ### VSCODE SETTINGS
 

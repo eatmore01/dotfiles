@@ -16,21 +16,23 @@ focus_follows_mouse no
 # BG
 output * bg ~/.config/sway/black.jpg fill
 
-# INPUT
+# INPUT ( keyboard )
 input "type:keyboard" {
 	xkb_layout "us,ru"
 	xkb_variant ","
 	xkb_options "grp:ctrl_space_toggle"
 }
 
+# INPUT ( mouse ) | 3200 dpi
 input type:pointer {
     accel_profile flat
     pointer_accel -0.1
     natural_scroll disabled
 }
 
-# OUTPUT
+seat seat0 xcursor_theme "Adwaita" 64
 
+# OUTPUT
 output * {
     scale 1
 }
