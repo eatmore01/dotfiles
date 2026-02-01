@@ -30,6 +30,7 @@ sudo pacman -Sy telegram-desktop \
     nmap \
     bind \
     wl-clipboard \
+    nautilus \
     --noconfirm
 
 sudo pacman -Rns \
