@@ -33,6 +33,7 @@ sudo pacman -Sy telegram-desktop \
     nautilus \
     trash-cli \
     ffmpegthumbnailer \
+    firefox \
     --noconfirm
 
 sudo pacman -Rns \

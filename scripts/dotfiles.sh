@@ -16,6 +16,7 @@ readonly CONFIGS=(
     "sway"
     "i3status-rust"
     "alacritty"
+    "nvim"
     "tofi"
     "i3"
     "ghostty"
