@@ -32,6 +32,7 @@ sudo pacman -Sy telegram-desktop \
     wl-clipboard \
     nautilus \
     trash-cli \
+    ffmpegthumbnailer \
     --noconfirm
 
 sudo pacman -Rns \
