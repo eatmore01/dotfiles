@@ -34,8 +34,10 @@ sudo pacman -Sy telegram-desktop \
     trash-cli \
     ffmpegthumbnailer \
     firefox \
-    neovim \
     --noconfirm
+
+sudo pacman -Sy bitwarden
+sudo pacman -Sy neovim
 
 sudo pacman -Rns \
     slim \
