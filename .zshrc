@@ -4,7 +4,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 export KUBECONFIGS=""
 
-export EDITOR=vim
+export EDITOR=nvim
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
