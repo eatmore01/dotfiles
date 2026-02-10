@@ -7,6 +7,11 @@ mainly use sway with intel integrate graphics or amd videcard | almost doesnt us
 ![hardware](./hardware-sway.png)
 ![hardware-mac](./hardware-mac.jpg)
 
+## INSTALLLLLLLLL SWAAAAAAAAAAAYYYWLL
+
+```bash
+chmod +x sway && ./sway.sh
+```
 
 ### VSCODE SETTINGS
 

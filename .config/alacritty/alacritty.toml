@@ -1,6 +1,6 @@
-#[colors.primary]
-#background = "#242424"
-#foreground = "#ffffff"
+[colors.primary]
+background = "#242424"
+foreground = "#ffffff"
 
 [cursor]
 style = "Beam"

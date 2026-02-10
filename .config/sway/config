@@ -13,6 +13,10 @@ set $menu tofi-run | xargs swaymsg exec --
 # or no
 focus_follows_mouse no
 
+
+default_orientation horizontal
+
+
 # BG
 output * bg ~/.config/sway/black.jpg fill
 
@@ -20,7 +24,7 @@ output * bg ~/.config/sway/black.jpg fill
 input "type:keyboard" {
 	xkb_layout "us,ru"
 	xkb_variant ","
-	xkb_options "grp:ctrl_space_toggle"
+	xkb_options "grp:ctrl_alt_toggle"
 }
 
 # INPUT ( mouse ) | 3200 dpi
@@ -176,11 +180,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
+
 # STATUS BAR
-# bar {
-#     position bottom
-#     swaybar_command waybar
-# }
 
 bar {
    position bottom
