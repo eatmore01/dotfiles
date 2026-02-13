@@ -28,6 +28,17 @@ else
   echo "Skipping OBS installation (SKIP_OBS is set)"
 fi
 
+# if [ -z "$SKIP_OBS" ]; then
+#   read -p "Do you want to install OBS? (y/n): " -n 1 -r
+#   echo
+#   if [[ $REPLY =~ ^[Yy]$ ]]; then
+#     bash "$SCRIPTS_PATH/obs.sh"
+#   fi
+# else
+#   echo "Skipping OBS installation (SKIP_OBS is set)"
+# fi
+#
+#
 # zsh setup
 echo "Setting up zsh..."
 yay -S --needed --noconfirm zsh

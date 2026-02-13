@@ -42,4 +42,4 @@ driver = "sway"
 [[block]]
 block = "time"
 interval = 60
-format = " $timestamp.datetime(f:'%H:%M %d-%m-%Y') "
+format = " $timestamp.datetime(f:'%A %H:%M %d-%m-%Y') "
