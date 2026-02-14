@@ -102,13 +102,10 @@ return {
                         hover = true,
                         format = { enable = false },
                         schemaStore = {
-                            enable = true,
-                            url = "https://www.schemastore.org/api/json/catalog.json",
+                            enable = false,
                         },
                         schemaDownload = { enable = true },
-                        schemas = {
-                            kubernetes = "*.yaml",
-                        },
+                        schemas = {},
                     },
                 },
             }
@@ -181,6 +178,9 @@ return {
                 end
             end
 
+            vim.api.nvim_create_user_command("YamlSchemaK8s", function()
+                set_yaml_schema_smart("", "Kubernetes") -- empty = autodetect for kubernetes
+            end, { desc = "Set Kubernetes schema" })
 
             vim.api.nvim_create_user_command("YamlSchemaGitlab", function()
                 set_yaml_schema_smart(
@@ -189,18 +189,21 @@ return {
                 )
             end, { desc = "Set GitLab CI schema" })
 
-            vim.api.nvim_create_user_command("YamlSchemaK8s", function()
-                set_yaml_schema_smart(
-                    "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.35.0-standalone-strict/all.json",
-                    "Kubernetes"
-                )
-            end, { desc = "Set Kubernetes schema" })
 
+            -- autodetect after open file
             vim.api.nvim_create_autocmd("BufReadPost", {
                 pattern = { "*.yaml", "*.yml" },
                 callback = function()
+                    local filename = vim.fn.expand("%:t")
                     local lines = vim.api.nvim_buf_get_lines(0, 0, 20, false)
                     local has_kind = false
+
+                    if filename == ".gitlab-ci.yml" then
+                        vim.defer_fn(function()
+                            vim.cmd("YamlSchemaGitlab")
+                        end, 500)
+                        return
+                    end
 
                     for _, line in ipairs(lines) do
                         if line:match("^%s*kind:%s*%w+") then
@@ -217,10 +220,12 @@ return {
                 end,
             })
 
+            -- manual select
             vim.keymap.set("n", "<leader>y", function()
                 local schemas = {
-                    { name = "🔵 Kubernetes", cmd = "YamlSchemaK8s" },
-                    { name = "🦊 GitLab CI", cmd = "YamlSchemaGitlab" },
+                    { name = "Kubernetes",     cmd = "YamlSchemaK8s" },
+                    { name = "GitLab CI",      cmd = "YamlSchemaGitlab" },
+                    { name = "Docker Compose", cmd = "YamlSchemaDockerCompose" },
                 }
 
                 vim.ui.select(
