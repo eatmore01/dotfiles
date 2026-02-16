@@ -40,10 +40,6 @@ FallbackDNS=9.9.9.9
 
 #
 #
-#
-#
-#
-#
 ### change kernel to lts version
 #➜  ~ ls /lib/modules/
 # 6.18.6-arch1-1 -> 6.12.68-1-lts
@@ -96,3 +92,15 @@ sudo vim /etc/NetworkManager/dispatcher.d/02-tun-mtu
 
 sudo chmod +x /etc/NetworkManager/dispatcher.d/02-tun-mtu
 ####
+#
+#
+#
+#
+# MTP support for nintendo swith game transfer
+sudo pacman -S libmtp gvfs-mtp android-file-transfer mtpfs
+#
+#
+sudo pacman -Sy qbittorrent
+#
+#
+sudo pacman -Sy usbutils
