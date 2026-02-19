@@ -27,6 +27,10 @@ return {
                 --         staged = "✓",
                 --     }
                 -- },
+				filters = {
+					dotfiles = false,
+					git_ignored = false,
+				},
             })
         end,
     },
