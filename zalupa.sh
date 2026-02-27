@@ -104,3 +104,6 @@ sudo pacman -Sy qbittorrent
 #
 #
 sudo pacman -Sy usbutils
+#
+#
+sudo pacman -Sy vault consul

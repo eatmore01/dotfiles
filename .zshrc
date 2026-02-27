@@ -1,14 +1,14 @@
-
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH=$HOME/.local/bin:$PATH
 
-export KUBECONFIGS="~/.kube/all-configs"
+export KUBECONFIGS="$HOME/.kube/all-configs"
 
+export TZ="Europe/Moscow"
 export EDITOR=nvim
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
 
 ZSH_THEME="robbyrussell"
 
@@ -37,6 +37,7 @@ alias v="vault"
 alias gen_tf_doc="terraform-docs markdown table --output-file README.md --output-mode inject"
 alias hd="helm-docs"
 
-alias sshconfig="cat ~/.ssh/config"
-alias zshedit="vim ~/.zshrc"
+alias sshcat="cat ~/.ssh/config"
+alias sshedit="nvim ~/.ssh/config"
+alias zshedit="nvim ~/.zshrc"
 alias hostsedit="sudo vim /etc/hosts"

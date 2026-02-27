@@ -3,7 +3,6 @@
 ![qwe](./image.png)
 
 ![hardware](./hardware-sway.png)
-![hardware-mac](./hardware-mac.jpg)
 
 ## INSTALLLLLLLLL SWAAAAAAAAAAAYYYWLL
 

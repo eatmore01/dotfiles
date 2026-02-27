@@ -14,7 +14,6 @@ return {
                     enable = true,
                 },
                 sync_root_with_cwd = true,
-
                 update_focused_file = {
                     enable = true,
                     update_root = false,
@@ -27,14 +26,13 @@ return {
                 --         staged = "✓",
                 --     }
                 -- },
-				filters = {
-					dotfiles = false,
-					git_ignored = false,
-				},
+                filters = {
+                    dotfiles = false,
+                    git_ignored = false,
+                },
             })
         end,
     },
-
     {
         "akinsho/bufferline.nvim",
         event = "VeryLazy",

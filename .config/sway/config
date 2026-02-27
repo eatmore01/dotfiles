@@ -1,4 +1,4 @@
-# Logo key. Use Mod1 for Alt.
+# Mod1 for alt
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -13,9 +13,8 @@ set $menu tofi-run | xargs swaymsg exec --
 # or no
 focus_follows_mouse no
 
-
+# in new sway version default oriention swith to vertical but my opinion horizontal is better
 default_orientation horizontal
-
 
 # BG
 output * bg ~/.config/sway/black.jpg fill
@@ -37,6 +36,7 @@ input type:pointer {
 seat seat0 xcursor_theme "Adwaita" 96
 
 # OUTPUT
+# 1 for fullhd monito
 output * {
     scale 1
 }
@@ -50,6 +50,7 @@ workspace 2 output HDMI-A-1
 workspace 3 output HDMI-A-1
 workspace 4 output HDMI-A-1
 workspace 5 output HDMI-A-1
+workspace 6 output HDMI-A-1
 
 
 # screen sharing fix

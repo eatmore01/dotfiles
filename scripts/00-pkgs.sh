@@ -10,7 +10,6 @@ readonly PACMAN_CORE_PKGS=(
   bind
   wl-clipboard
   nautilus
-  trash-cli
   ffmpegthumbnailer
   go
   unzip
