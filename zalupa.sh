@@ -107,3 +107,14 @@ sudo pacman -Sy usbutils
 #
 #
 sudo pacman -Sy vault consul
+#
+#
+yay -Sy --needed --noconfirm --cleanafter --removemake happ-desktop-bin openvpn3
+#
+#
+# check aur packages
+pacman -Qqe | while read pkg; do
+  if pacman -Qi "$pkg" | grep -q "Unknown Packager"; then
+    echo "AUR: $pkg"
+  fi
+done

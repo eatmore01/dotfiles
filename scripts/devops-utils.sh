@@ -7,18 +7,18 @@ readonly PACMAN_PKGS=(
   terraform
   k9s
   helm
-)
-
-readonly YAY_PKGS=(
   kubectx
   terragrunt
 )
 
+readonly YAY_PKGS=(
+)
+
 echo "Installing pacman packages..."
-sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
+sudo pacman -Sy --needed --noconfirm "${PACMAN_PKGS[@]}"
 
 echo "Installing AUR packages..."
-yay -S --needed --noconfirm --cleanafter --removemake "${YAY_PKGS[@]}"
+yay -Sy --needed --noconfirm --cleanafter --removemake "${YAY_PKGS[@]}"
 
 echo "Building kubeswitches..."
 TEMP_DIR=$(mktemp -d)

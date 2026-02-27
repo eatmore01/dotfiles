@@ -13,11 +13,11 @@ readonly PACMAN_CORE_PKGS=(
   ffmpegthumbnailer
   go
   unzip
+  i3status-rust
 )
 
 readonly YAY_CORE_PKGS=(
   tofi
-  i3status-rust
 )
 
 echo "Installing pacman packages..."

@@ -5,4 +5,4 @@ readonly PKGS=(
 )
 
 echo "Installing pacman packages..."
-sudo pacman -S --needed --noconfirm "${PKGS[@]}"
+sudo pacman -Sy --needed --noconfirm "${PKGS[@]}"
