@@ -18,6 +18,7 @@ readonly PACMAN_CORE_PKGS=(
 
 readonly YAY_CORE_PKGS=(
   tofi
+  nmgui-bin
 )
 
 echo "Installing pacman packages..."

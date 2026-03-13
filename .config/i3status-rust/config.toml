@@ -1,33 +1,39 @@
 [[block]]
+block = "battery"
+format = " $icon $percentage "
+
+[[block]]
 block = "net"
-device = "enp9s0"
+device = "wlan0"
 interval = 1
-format = " $icon: $ip ($speed_down) "
+format = " $icon: $speed_down "
 inactive_format = "$icon: down"
-
-[[block]]
-block = "memory"
-format = " $icon $mem_used / $mem_total "
-interval = 30
-warning_mem = 70
-critical_mem = 90
-
-[[block]]
-block = "amd_gpu"
-format = " $icon $vram_used_percents ($vram_used/$vram_total) "
-interval = 1
-
-[[block]]
-block = "cpu"
-interval = 1
-
-[[block]]
-block = "temperature"
-interval = 5
-chip = "k10temp-*"
-format = " $icon $average avg "
-format_alt = " $icon min - $min, max - $max "
-
+click = [
+  { button = "left", cmd = "nmgui" }
+]
+# [[block]]
+# block = "memory"
+# format = " $icon $mem_used / $mem_total "
+# interval = 30
+# warning_mem = 70
+# critical_mem = 90
+#
+# [[block]]
+# block = "amd_gpu"
+# format = " $icon $vram_used_percents ($vram_used/$vram_total) "
+# interval = 1
+#
+# [[block]]
+# block = "cpu"
+# interval = 1
+#
+# [[block]]
+# block = "temperature"
+# interval = 5
+# chip = "k10temp-*"
+# format = " $icon $average avg "
+# format_alt = " $icon min - $min, max - $max "
+#
 
 [[block]]
 block = "sound"

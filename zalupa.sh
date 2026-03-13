@@ -119,4 +119,3 @@ pacman -Qqe | while read pkg; do
   fi
 done
 #
-#
