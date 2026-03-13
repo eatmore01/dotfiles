@@ -118,3 +118,6 @@ pacman -Qqe | while read pkg; do
     echo "AUR: $pkg"
   fi
 done
+#
+#
+sudo pacman -S wine wine-gecko
