@@ -120,4 +120,3 @@ pacman -Qqe | while read pkg; do
 done
 #
 #
-sudo pacman -S wine wine-gecko
