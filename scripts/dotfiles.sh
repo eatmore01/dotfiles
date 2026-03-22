@@ -9,7 +9,7 @@ readonly NC='\033[0m'
 
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly REPO_ROOT="$(dirname "$SCRIPT_DIR")"
-readonly CONFIG_SOURCE="$REPO_ROOT/.config"
+readonly CONFIG_SOURCE="$REPO_ROOT/config"
 readonly CONFIG_TARGET="$HOME/.config"
 readonly ROOT_CONFIG_SOURCE="$REPO_ROOT"
 

@@ -1,0 +1,28 @@
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+
+[[block]]
+block = "net"
+device = "enp2s0f0" # wlan0
+interval = 1
+format = " $icon: $speed_down "
+inactive_format = "$icon: down"
+click = [
+  { button = "left", cmd = "nmgui" }
+]
+
+[[block]]
+block = "sound"
+click = [
+  { button = "left", cmd = "pavucontrol" }
+]
+
+[[block]]
+block = "keyboard_layout"
+driver = "sway"
+
+[[block]]
+block = "time"
+interval = 60
+format = " $timestamp.datetime(f:'%A %H:%M %d-%m-%Y') "

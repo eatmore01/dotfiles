@@ -33,7 +33,7 @@ input type:pointer {
     natural_scroll disabled
 }
 
-seat seat0 xcursor_theme "Adwaita" 96
+seat seat0 xcursor_theme "Adwaita" 48
 
 # OUTPUT
 # 1 for fullhd monito
@@ -41,8 +41,12 @@ output * {
     scale 1
 }
 
+output eDP-1 {
+    mode 1920x1080@60Hz
+}
+
 output HDMI-A-1 {
-    mode 2560x1440@144Hz
+    mode 1920x1080@120Hz
 }
 
 workspace 1 output HDMI-A-1
@@ -50,7 +54,7 @@ workspace 2 output HDMI-A-1
 workspace 3 output HDMI-A-1
 workspace 4 output HDMI-A-1
 workspace 5 output HDMI-A-1
-workspace 6 output HDMI-A-1
+workspace 6 output eDP-1
 
 
 # screen sharing fix
@@ -58,7 +62,6 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 
 
 ### Key bindings
-
     # Start a terminal
     bindsym $mod+Return exec $term
 

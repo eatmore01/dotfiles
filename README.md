@@ -2,15 +2,14 @@
 
 ![qwe](./image.png)
 
-![hardware](./hardware-sway.png)
+![hardware](./hardware.png)
 
-## INSTALLLLLLLLL SWAAAAAAAAAAAYYYWLL
 
 ```bash
 chmod +x sway && ./sway.sh
 ```
 
-### firefox settings
+### firefox 
 
 ```json
 user_pref("browser.contentblocking.category", "custom");
@@ -86,8 +85,7 @@ user_pref("media.webspeech.synth.dont_notify_on_error", true);
 
 ```
 
-
-### VSCODE SETTINGS
+### VSCODE 
 
 ```json
 {
@@ -155,5 +153,46 @@ user_pref("media.webspeech.synth.dont_notify_on_error", true);
   "yaml-with-script.enabled": true,
   "editor.fontSize": 11.5,
   "window.zoomLevel": 1
+}
+```
+
+### ZED
+
+```json
+{
+  "disable_ai": true,
+  "vim_mode": false,
+  "edit_predictions": {
+    "mode": "eager",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "icon_theme": "Zed (Default)",
+  "base_keymap": "VSCode",
+  "ui_font_size": 20,
+  "buffer_font_size": 17,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+  "format_on_save": "on",
+  "languages": {
+    "YAML": {
+      "tab_size": 2,
+      "formatter": {
+        "external": {
+          "command": "yamlfmt",
+          "arguments": [
+            "-in",
+            "-formatter",
+            "indent=2,indentless_arrays=true,retain_line_breaks=true",
+          ],
+        },
+      },
+    },
+  },
 }
 ```

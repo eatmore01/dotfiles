@@ -31,9 +31,9 @@ sudo pacman -Sy steam --noconfirm
 
 # ?????????
 ➜ ~ cat /etc/systemd/resolved.conf
+
 [Resolve]
-DNS=10.0.0.114 8.8.8.8 8.8.4.4 1.1.1.1 10.0.0.114 10.0.0.22
-FallbackDNS=9.9.9.9
+DNS=10.0.0.114 10.0.0.22
 
 ➜ ~ sudo systemctl restart systemd-resolved.service
 #
@@ -61,7 +61,7 @@ cat /etc/mkinitcpio.conf | grep -E '^(MODULES|HOOKS)'\n
 # features for kernel 6.18+ not for 6.12
 sudo findmnt --verify
 
-# sudo reboot now
+sudo reboot now
 #
 #
 #
@@ -109,7 +109,7 @@ sudo pacman -Sy usbutils
 sudo pacman -Sy vault consul
 #
 #
-yay -Sy --needed --noconfirm --cleanafter --removemake happ-desktop-bin openvpn3
+yay -Sy --noconfirm --cleanafter --removemake happ-desktop-bin openvpn3
 #
 #
 # check aur packages
@@ -119,3 +119,5 @@ pacman -Qqe | while read pkg; do
   fi
 done
 #
+#
+yay -Sy --noconfirm --cleanafter --removemake visual-studio-code-bin # ?????

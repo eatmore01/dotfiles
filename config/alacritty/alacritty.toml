@@ -6,7 +6,7 @@ foreground = "#ffffff"
 style = "Beam"
 
 [font]
-size = 12.5
+size = 12
 
 [scrolling]
 history = 10000
@@ -15,10 +15,11 @@ multiplier = 3
 [window]
 decorations = "full"
 dynamic_padding = true
-opacity = 0.95
+opacity = 0.99
 
 decorations_theme_variant = "Dark"
 
 [window.padding]
-x = 10
-y = 10
+x = 5
+y = 0
+
