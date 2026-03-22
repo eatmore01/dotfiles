@@ -89,6 +89,7 @@ user_pref("media.webspeech.synth.dont_notify_on_error", true);
 
 ```json
 {
+  "chat.disableAIFeatures": true,
   "editor.minimap.enabled": false,
   "editor.quickSuggestionsDelay": 0,
   "editor.formatOnSave": true,
