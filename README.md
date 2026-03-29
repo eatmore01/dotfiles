@@ -9,7 +9,7 @@
 chmod +x sway && ./sway.sh
 ```
 
-### firefox 
+### firefox user.js
 
 ```json
 user_pref("browser.contentblocking.category", "custom");

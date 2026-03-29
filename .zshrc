@@ -22,9 +22,6 @@ alias k="kubectl"
 alias h="helm"
 alias ks="kubeswitches"
 
-alias d="docker"
-alias dc="docker compose"
-
 alias tf="terraform"
 alias tg="terragrunt"
 

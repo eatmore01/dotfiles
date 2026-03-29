@@ -14,6 +14,8 @@ readonly PACMAN_CORE_PKGS=(
   go
   unzip
   i3status-rust
+  xdg-desktop-portal
+  xdg-desktop-portal-wlr
 )
 
 readonly YAY_CORE_PKGS=(

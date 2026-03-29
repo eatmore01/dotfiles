@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 readonly PKGS=(
-  obs-studio xdg-desktop-portal xdg-desktop-portal-wlr
+  obs-studio
 )
 
 echo "Installing pacman packages..."

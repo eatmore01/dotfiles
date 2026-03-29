@@ -1,6 +1,6 @@
-[[block]]
-block = "battery"
-format = " $icon $percentage "
+# [[block]]
+# block = "battery"
+# format = " $icon $percentage "
 
 [[block]]
 block = "net"
