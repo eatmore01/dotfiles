@@ -1,14 +1,3 @@
-# fix amnmeziavpn domen resolving https://github.com/amnezia-vpn/amnezia-client/issues/792
-sudo systemctl enable systemd-resolved.service && sudo systemctl start systemd-resolved.service
-
-sudo ln -sf ../run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-cat >>/etc/NetworkManager/conf.d/dns.conf <<EOF
-[main]
-dns=systemd-resolved
-EOF
-#
-
 # LIBVIRT + QEMU
 sudo pacman -Sy qemu libvirt virt-manager dnsmasq bridge-utils gst-plugins-bad-libs cdrtools --noconfirm
 

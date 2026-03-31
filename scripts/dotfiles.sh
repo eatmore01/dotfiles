@@ -15,18 +15,17 @@ readonly ROOT_CONFIG_SOURCE="$REPO_ROOT"
 
 readonly CONFIGS=(
   "sway"
-  "i3status-rust"
+  # "i3status-rust"
   "alacritty"
   "nvim"
   "tofi"
-  #  "i3"
-  #  "ghostty"
 )
 
 readonly ROOT_CONFIGS=(
   ".zshrc"
   ".terraformrc"
   ".vimrc"
+  ".gitconfig"
 )
 
 print_success() {

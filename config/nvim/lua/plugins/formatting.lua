@@ -41,7 +41,7 @@ return {
 							"-formatter",
 							"retain_line_breaks=true",
 							"-formatter",
-							"max_line_length=80",
+							"max_line_length=0",
 						},
 					},
 				},

@@ -8,7 +8,7 @@ set $right l
 set $term alacritty
 
 #set $menu wmenu-run
-set $menu tofi-run | xargs swaymsg exec --
+set $menu tofi-run | xargs -r swaymsg exec --
 
 # or no
 focus_follows_mouse no
@@ -192,9 +192,16 @@ bindsym $mod+r mode "resize"
 
 # STATUS BAR
 
+# bar {
+#    position bottom
+#    status_command i3status-rs ~/.config/i3status-rust/config.toml
+# }
+
+
 bar {
    position bottom
-   status_command i3status-rs ~/.config/i3status-rust/config.toml
+    status_command ~/.config/sway/bar.sh
+    colors { }
 }
 
 include /etc/sway/config.d/*

@@ -13,7 +13,6 @@ readonly PACMAN_PKGS=(
 )
 
 # node and npm for correct scheme selector and mapper work
-
 readonly YAY_PKGS=(
   amneziavpn-bin
 )
