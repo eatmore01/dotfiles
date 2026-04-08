@@ -1,3 +1,23 @@
+# MACONLY OPTION DOWN
+
+[env]
+LC_CTYPE = "C-UTF-8"
+
+[[keyboard.bindings]]
+mods = "Alt"
+key = "J"
+chars = "\x1bj"
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Alt"
+chars = "\x1bk"
+
+# MAC ONLY OPTION ABOVE
+#
+#
+#
+
 [colors.primary]
 background = "#242424"
 foreground = "#ffffff"
@@ -22,4 +42,3 @@ decorations_theme_variant = "Dark"
 [window.padding]
 x = 5
 y = 0
-
