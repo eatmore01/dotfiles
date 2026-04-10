@@ -23,8 +23,10 @@ output * bg ~/.config/sway/black.jpg fill
 input "type:keyboard" {
 	xkb_layout "us,ru"
 	xkb_variant ","
-	xkb_options "grp:ctrl_alt_toggle"
+	xkb_options "grp:rctrl_toggle"
 }
+
+bindsym Control+4 input * xkb_switch_layout next
 
 # INPUT ( mouse ) | 3200 dpi
 input type:pointer {
