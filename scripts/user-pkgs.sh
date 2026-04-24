@@ -10,6 +10,7 @@ readonly PACMAN_PKGS=(
   nodejs
   npm
   obsidian
+  zed
 )
 
 # node and npm for correct scheme selector and mapper work
