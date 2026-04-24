@@ -4,8 +4,8 @@ set -e
 
 readonly PACMAN_CORE_PKGS=(
   alacritty
-  vlc
-  vlc-plugin-ffmpeg
+  # vlc
+  # vlc-plugin-ffmpeg
   nmap
   bind
   wl-clipboard
@@ -21,7 +21,6 @@ readonly PACMAN_CORE_PKGS=(
 
 readonly YAY_CORE_PKGS=(
   tofi
-  nmgui-bin
 )
 
 echo "Installing pacman packages..."
