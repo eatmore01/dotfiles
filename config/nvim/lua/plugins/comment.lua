@@ -1,30 +1,20 @@
 return {
 	{
-		"numToStr/Comment.nvim",
+		"echasnovski/mini.comment",
+		version = "*",
 		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			local comment = require("Comment")
-			local api = require("Comment.api")
+		opts = {
+			mappings = {
+				comment = nil,
+				comment_line = nil,
+				comment_visual = nil,
+				comment_repeat = nil,
+			},
 
-			comment.setup({
-				padding = true,
-				sticky = true,
-				ignore = nil,
-
-				mappings = {
-					basic = true, -- gcc, gc, gbc, gb
-					extra = false,
-				},
-
-				-- extra = {
-				-- 	above = "gco",
-				-- 	below = "gco",
-				-- 	eol = "gca",
-				-- },
-
-				pre_hook = nil,
-				post_hook = nil,
-			})
-		end,
+			options = {
+				custom_commentstring = nil,
+				ignore_blank_line = true,
+			},
+		},
 	},
 }

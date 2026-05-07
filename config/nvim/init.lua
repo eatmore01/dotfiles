@@ -70,6 +70,26 @@ vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true, desc = "Indent selection" })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true, desc = "Unindent selection" })
 
+vim.g.loaded_snippets = 1
+
+vim.keymap.set("n", "<leader>c", function()
+	local pattern = vim.fn.input("what repalce: ")
+	if pattern == "" then
+		return
+	end
+	local replacement = vim.fn.input("on what replacre: ")
+
+	local safe_pat = vim.fn.escape(pattern, "/\\")
+	local safe_rep = vim.fn.escape(replacement, "/\\&")
+
+	vim.cmd(string.format(".,$s/%s/%s/gc", safe_pat, safe_rep))
+
+	vim.notify(
+		('Reaplced "%s" → "%s" (строка %d → EOF)'):format(pattern, replacement, vim.fn.line(".")),
+		vim.log.levels.INFO
+	)
+end, { desc = "Replace from cursor to EOF" })
+
 --- basic
 opt.number = true
 
@@ -81,7 +101,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 
-opt.autoindent = true
+opt.autoindent = false
 opt.smartindent = false
 opt.cindent = false
 

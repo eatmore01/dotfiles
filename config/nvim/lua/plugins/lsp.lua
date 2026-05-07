@@ -42,22 +42,19 @@ return {
 		},
 		config = function()
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local capabilities = cmp_nvim_lsp.default_capabilities()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-			-- Terraform
-			local tf_capabilities = vim.lsp.protocol.make_client_capabilities()
-			tf_capabilities.textDocument.completion.completionItem.snippetSupport = true
-			tf_capabilities = vim.tbl_deep_extend("force", tf_capabilities, capabilities)
-
-			vim.lsp.config.terraformls = {
-				capabilities = tf_capabilities,
-				filetypes = { "terraform", "tf", "hcl" },
-			}
-			vim.lsp.enable("terraformls")
+			capabilities = vim.tbl_deep_extend("force", capabilities, cmp_nvim_lsp.default_capabilities())
 
 			vim.lsp.config("*", {
 				capabilities = capabilities,
 			})
+
+			vim.lsp.config.terraformls = {
+				filetypes = { "terraform", "tf", "hcl" },
+			}
+
+			vim.lsp.enable("terraformls")
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(ev)
@@ -93,7 +90,6 @@ return {
 				filetypes = { "yaml", "yml" },
 				root_markers = { ".git" },
 				single_file_support = true,
-				capabilities = capabilities,
 				settings = {
 					redhat = { telemetry = { enabled = false } },
 					yaml = {
@@ -181,7 +177,7 @@ return {
 			end
 
 			vim.api.nvim_create_user_command("YamlSchemaK8s", function()
-				set_yaml_schema_smart("", "Kubernetes") -- empty = autodetect for kubernetes
+				set_yaml_schema_smart("", "Kubernetes")
 			end, { desc = "Set Kubernetes schema" })
 
 			vim.api.nvim_create_user_command("YamlSchemaGitlab", function()
@@ -191,7 +187,6 @@ return {
 				)
 			end, { desc = "Set GitLab CI schema" })
 
-			-- autodetect after open file
 			vim.api.nvim_create_autocmd("BufReadPost", {
 				pattern = { "*.yaml", "*.yml" },
 				callback = function()
@@ -221,7 +216,6 @@ return {
 				end,
 			})
 
-			-- manual select
 			vim.keymap.set("n", "<leader>y", function()
 				local schemas = {
 					{ name = "Kubernetes", cmd = "YamlSchemaK8s" },
