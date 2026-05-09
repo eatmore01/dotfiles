@@ -110,3 +110,5 @@ done
 #
 #
 yay -Sy --noconfirm --cleanafter --removemake visual-studio-code-bin # ?????
+
+yay -Sy flux-bin
