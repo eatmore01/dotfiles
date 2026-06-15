@@ -1,0 +1,58 @@
+{
+  "description": "Cmd+Q closes window, Cmd+Option+Q quits app, Caps Lock -> Escape, Shift+Escape -> Tilde",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "q",
+        "modifiers": {
+          "mandatory": ["command"],
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "w",
+          "modifiers": ["command"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "q",
+        "modifiers": {
+          "mandatory": ["option"],
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "q",
+          "modifiers": ["command"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": { "key_code": "caps_lock" },
+      "to": [{ "key_code": "escape" }],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "escape",
+        "modifiers": {
+          "mandatory": ["shift"],
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "grave_accent_and_tilde",
+          "modifiers": ["shift"]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
