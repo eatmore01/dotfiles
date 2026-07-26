@@ -19,6 +19,7 @@ outer.right = 0
 [mode.main.binding]
 
     alt-enter = 'exec-and-forget open -n -a Alacritty'
+    alt-t = 'exec-and-forget open -n -a Telegram'
 
     alt-h = 'focus left'
     alt-j = 'focus down'
