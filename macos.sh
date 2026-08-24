@@ -12,4 +12,4 @@ git config --global core.excludesfile ~/.gitignore_global
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 
 #
-brew install font-hack-nerd-font
+brew install --cask vorssaint
