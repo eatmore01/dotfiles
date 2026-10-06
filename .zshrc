@@ -33,7 +33,3 @@ alias commain="git add . && git commit -am '$(date)' && git push origin main"
 
 alias gen_tf_doc="terraform-docs markdown table --output-file README.md --output-mode inject"
 alias hd="helm-docs"
-
-alias sshcat="cat ~/.ssh/config"
-alias sshedit="nvim ~/.ssh"
-alias zshedit="nvim ~/.zshrc"
